@@ -4,9 +4,9 @@ namespace opensrs\trust;
 
 use opensrs\Base;
 
-class ResendApproverEmail extends Base
+class GetProducts extends Base
 {
-    protected $action = 'resend_approver_email';
+    protected $action = 'get_products';
     protected $object = 'trust_service';
 
     private $_formatHolder = '';
@@ -17,11 +17,11 @@ class ResendApproverEmail extends Base
 
     public $requiredFields = array(
         'attributes' => array(
-            'order_id',
-            ),
-        );
+            'product_id',
+        ),
+    );
 
-    public function __construct($formatString, $dataObject, $returnFullResponse = true)
+    public function __construct($formatString, $dataObject, $returnFullResponse = null)
     {
         parent::__construct();
 

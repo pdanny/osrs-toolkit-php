@@ -4,9 +4,9 @@ namespace opensrs\trust;
 
 use opensrs\Base;
 
-class ProcessPending extends Base
+class UpdateDVAuthCheck extends Base
 {
-    protected $action = 'process_pending';
+    protected $action = 'update_dv_auth';
     protected $object = 'trust_service';
 
     private $_formatHolder = '';
@@ -18,10 +18,11 @@ class ProcessPending extends Base
     public $requiredFields = array(
         'attributes' => array(
             'order_id',
-            ),
-        );
+            'dv_auth_on_demand_check',
+        ),
+    );
 
-    public function __construct($formatString, $dataObject, $returnFullResponse = true)
+    public function __construct($formatString, $dataObject, $returnFullResponse = null)
     {
         parent::__construct();
 
